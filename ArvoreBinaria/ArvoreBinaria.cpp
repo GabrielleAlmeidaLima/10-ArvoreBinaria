@@ -18,8 +18,6 @@ void inserir();
 void exibir();
 void exibirQuantidade();
 
-
-
 // funcoes auxiliares Arvore
 NO* insereArvore(NO* no, int valor);
 NO* criaNO(int valor);
@@ -152,5 +150,17 @@ int elementosArvore(NO* no)
 
 void exibirElementosArvore(NO* no)
 {
-	
+	if (raiz == NULL) {  
+		cout << "A arvore está vazia." << endl;
+		return;
+	}
+	else 
+		if (no == NULL) {  
+		return;
+	}
+	else {
+		exibirElementosArvore(no->esq);  
+		cout << no->valor << " "; // exibe o valor do nó atual    
+		exibirElementosArvore(no->dir);  
+	}
 }
